@@ -8,11 +8,11 @@ namespace EFCore.Repository
     {
         public HeroiContext(DbContextOptions<HeroiContext> options) : base(options) { }
 
-        DbSet<Heroi> Herois { get; set; }
-        DbSet<Arma> Armas { get; set; }
-        DbSet<IdentidadeSecreta> IdentidadesSecretas { get; set; }
-        DbSet<Batalha> Batalhas { get; set; }
-        DbSet<HeroiBatalha> HeroisBatalhas { get; set; }
+        public DbSet<Heroi> Herois { get; set; }
+        public DbSet<Arma> Armas { get; set; }
+        public DbSet<IdentidadeSecreta> IdentidadesSecretas { get; set; }
+        public DbSet<Batalha> Batalhas { get; set; }
+        public DbSet<HeroiBatalha> HeroisBatalhas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
