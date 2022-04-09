@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Heroes.Models
+namespace EFCore.Domain
 {
     public class Batalha
     {

@@ -1,4 +1,4 @@
-﻿namespace Heroes.Models
+﻿namespace EFCore.Domain
 {
     public class HeroiBatalha
     {

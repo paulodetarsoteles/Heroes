@@ -1,21 +1,18 @@
-﻿using Heroes.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using EFCore.Domain;
 
-namespace Heroes.Data
+namespace EFCore.Repository
 {
+
     public class HeroiContext : DbContext
     {
+        public HeroiContext(DbContextOptions<HeroiContext> options) : base(options) { }
+
         DbSet<Heroi> Herois { get; set; }
         DbSet<Arma> Armas { get; set; }
         DbSet<IdentidadeSecreta> IdentidadesSecretas { get; set; }
         DbSet<Batalha> Batalhas { get; set; }
         DbSet<HeroiBatalha> HeroisBatalhas { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer
-                ("Password=12345678;Persist Security Info=False;User ID=sa;Initial Catalog=HeroApp;Data Source=DESKTOP-JVF2A0R\\SQLEXPRESS");
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
