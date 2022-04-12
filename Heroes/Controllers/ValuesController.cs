@@ -1,10 +1,7 @@
 ﻿using EFCore.Domain;
 using EFCore.Repository;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Heroes.Controllers
 {
@@ -30,7 +27,7 @@ namespace Heroes.Controllers
             return Ok(listHeroi);
         }
 
-        // GET api/values/5
+        // GET api/values/NOME DO HEROI A SER ADICIONADO
         [HttpGet("{nameHero}")]
         public ActionResult Get(string nameHero)
         {
@@ -55,6 +52,7 @@ namespace Heroes.Controllers
                 new Heroi { Nome = "Gavião Arqueiro"},
                 new Heroi { Nome = "Capitã Marvel"}
             );
+
             _context.SaveChanges();
             return Ok();
         }
@@ -66,11 +64,10 @@ namespace Heroes.Controllers
             var heroi = _context.Herois
                         .Where(h => h.Id == 4)
                         .FirstOrDefault();
+
             heroi.Nome = "Homem Aranha"; 
 
-            
             _context.SaveChanges();
-
             return Ok();
         }
 

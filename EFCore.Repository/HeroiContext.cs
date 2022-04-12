@@ -3,7 +3,6 @@ using EFCore.Domain;
 
 namespace EFCore.Repository
 {
-
     public class HeroiContext : DbContext
     {
         public HeroiContext(DbContextOptions<HeroiContext> options) : base(options) { }
